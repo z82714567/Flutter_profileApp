@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class ProfileCountInfo extends StatelessWidget {
   const ProfileCountInfo({super.key});
@@ -18,10 +19,27 @@ class ProfileCountInfo extends StatelessWidget {
   }
 
   Widget _buildInfo(String count, String title) {
-    return SizedBox();
+    return Column(
+      children: [
+        Text(
+          count,
+          style: TextStyle(fontSize: 15),
+        ),
+        const SizedBox(height: 2),
+        Text(
+          title,
+          style: TextStyle(fontSize: 15),
+        ),
+      ],
+    );
   }
 
   Widget _buildLine() {
-    return SizedBox();
+    // 주의! color 와 decoration 같이 쓰면 오류 발생
+    return Container(
+      width: 2,
+      height: 60,
+      color: Colors.blue,
+    );
   }
 }
